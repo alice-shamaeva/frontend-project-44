@@ -1,8 +1,6 @@
 #!/usr/bin/env node
-console.log("Welcome to the Brain Games!");
+import { greating } from '../src/cli.js';
 
-import {greating} from '../src/cli.js';
+console.log('Welcome to the Brain Games!');
 
-greating ();
-
-
+greating();
