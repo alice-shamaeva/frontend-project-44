@@ -5,7 +5,7 @@ console.log('brain-even\n');
 
 console.log('Welcome to the Brain Games!');
 
-const userName = readLineSync.question('May I have your name?');
+const userName = readLineSync.question('May I have your name? ');
 console.log(`Hello, ${userName}!`);
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
