@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readLineSync from 'readline-sync';
-import { startRound } from "../src/games/game-even.js";
+import startRoundEven from '../src/games/game-even.js';
 
 console.log('brain-even\n');
 
@@ -13,7 +13,7 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const startGame = () => {
   for (let i = 0; i < 3; i += 1) {
-    const isCorrect = startRound();
+    const isCorrect = startRoundEven();
     if (!isCorrect) {
       console.log(`Let's try again, ${userName}`);
       return;

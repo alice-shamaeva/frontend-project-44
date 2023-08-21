@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readLineSync from 'readline-sync';
-import { startRound } from "../src/games/game-calc.js";
+import startRoundCalc from '../src/games/game-calc.js';
 
 console.log('brain-calc\n');
 
@@ -12,13 +12,13 @@ console.log(`Hello, ${userName}!`);
 console.log('What is the result of the expression?');
 
 const startGame = () => {
-    for (let i = 0; i < 3; i += 1) {
-        const isCorrect = startRound();
-        if (!isCorrect) {
-            console.log(`Let's try again, ${userName}`);
-            return;
-        }
+  for (let i = 0; i < 3; i += 1) {
+    const isCorrect = startRoundCalc();
+    if (!isCorrect) {
+      console.log(`Let's try again, ${userName}`);
+      return;
     }
-    console.log(`Congratulations, ${userName}`);
+  }
+  console.log(`Congratulations, ${userName}`);
 };
 startGame();

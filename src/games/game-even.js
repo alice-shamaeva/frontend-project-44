@@ -1,24 +1,27 @@
-import { getRandomNumber } from "../index.js";
-import readLineSync from "readline-sync";
+import readLineSync from 'readline-sync';
+import getRandomNumber from '../index.js';
 
 const isEven = (num) => {
-    return num % 2 === 0;
+  return num % 2 === 0;
 };
 
-export const startRound = () => {
-    const randomNumber = getRandomNumber();
+const startRoundEven = () => {
+  const randomNumber = getRandomNumber();
 
-    console.log(`Question: ${randomNumber}`);
+  console.log(`Question: ${randomNumber}`);
 
-    const answer = readLineSync.question('Your answer: ');
+  const answer = readLineSync.question('Your answer: ');
 
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
+  const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
-    if (answer.toLowerCase() === correctAnswer) {
-        console.log('Correct!');
-        return true;
-    } else {
-        console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-        return false;
-    }
+  if (answer.toLowerCase() === correctAnswer) {
+    console.log('Correct!');
+    return true;
+  }
+  if (answer.toLowerCase() !== correctAnswer) {
+    console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    return false;
+  }
 };
+
+export default startRoundEven;

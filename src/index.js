@@ -1,4 +1,5 @@
-export const getRandomNumber = () => {
-    return Math.round(Math.random() * 100);
+const getRandomNumber = () => {
+  return Math.round(Math.random() * 100);
 };
 
+export default getRandomNumber;
