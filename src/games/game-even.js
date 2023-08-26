@@ -6,7 +6,7 @@ const isEven = (num) => {
 };
 
 const startRoundEven = () => {
-  const randomNumber = getRandomNumber();
+  const randomNumber = getRandomNumber(100);
 
   console.log(`Question: ${randomNumber}`);
 

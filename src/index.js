@@ -1,5 +1,5 @@
-const getRandomNumber = () => {
-  return Math.round(Math.random() * 100);
+const getRandomNumber = (base) => {
+  return Math.round(Math.random() * base);
 };
 
 export default getRandomNumber;

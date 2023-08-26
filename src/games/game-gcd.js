@@ -13,8 +13,8 @@ const getNOD = (num1, num2) => {
 };
 
 const startRoundGCD = () => {
-  const randomNumber1 = getRandomNumber();
-  const randomNumber2 = getRandomNumber();
+  const randomNumber1 = getRandomNumber(100);
+  const randomNumber2 = getRandomNumber(100);
 
   console.log(`Question: ${randomNumber1}, ${randomNumber2}`);
 

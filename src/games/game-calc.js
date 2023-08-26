@@ -20,8 +20,8 @@ const getRandomChar = () => {
 };
 
 const startRoundCalc = () => {
-  const randomNumber1 = getRandomNumber();
-  const randomNumber2 = getRandomNumber();
+  const randomNumber1 = getRandomNumber(100);
+  const randomNumber2 = getRandomNumber(100);
   const randomChar = getRandomChar();
 
   console.log(`Question: ${randomNumber1} ${randomChar} ${randomNumber2}`);
