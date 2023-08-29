@@ -12,14 +12,14 @@ console.log(`Hello, ${userName}!`);
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 const startGame = () => {
-    for (let i = 0; i < 3; i += 1) {
-        const isCorrect = startRoundPrime();
-        if (!isCorrect) {
-            console.log(`Let's try again, ${userName}`);
-            return;
-        }
+  for (let i = 0; i < 3; i += 1) {
+    const isCorrect = startRoundPrime();
+    if (!isCorrect) {
+       console.log(`Let's try again, ${userName}`);
+       return;
     }
-    console.log(`Congratulations, ${userName}`);
+  }
+  console.log(`Congratulations, ${userName}`);
 };
 
 startGame();
