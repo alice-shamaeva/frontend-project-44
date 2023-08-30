@@ -35,7 +35,7 @@ const hideProgressionNumber = (progression, index) => {
 const startRoundProgression = () => {
   const progression = getProgression(getRandomNumber(100), progressionStep, 10);
 
-  console.log(`Question: ${hideProgressionNumber(progression, hideIndex)}`);
+  console.log(`Question: ${hideProgressionNumber(progression, hideIndex).join(' ')}`);
 
   const answer = readLineSync.question('Your answer: ');
 
