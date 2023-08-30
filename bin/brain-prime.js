@@ -15,11 +15,11 @@ const startGame = () => {
   for (let i = 0; i < 3; i += 1) {
     const isCorrect = startRoundPrime();
     if (!isCorrect) {
-       console.log(`Let's try again, ${userName}`);
+       console.log(`Let's try again, ${userName}!`);
        return;
     }
   }
-  console.log(`Congratulations, ${userName}`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 startGame();
