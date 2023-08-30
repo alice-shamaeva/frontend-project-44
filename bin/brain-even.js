@@ -19,6 +19,6 @@ const startGame = () => {
       return;
     }
   }
-  console.log(`Congratulations, ${userName}`);
+  console.log(`Congratulations, ${userName}!`);
 };
 startGame();
