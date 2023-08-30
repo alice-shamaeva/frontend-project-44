@@ -16,7 +16,7 @@ const startRoundGCD = () => {
   const randomNumber1 = getRandomNumber(100);
   const randomNumber2 = getRandomNumber(100);
 
-  console.log(`Question: ${randomNumber1}, ${randomNumber2}`);
+  console.log(`Question: ${randomNumber1} ${randomNumber2}`);
 
   const answer = readLineSync.question('Your answer: ');
 
