@@ -8,16 +8,12 @@ const getExpression = (num1, num2, char) => {
   if (char === '-') {
     return num1 - num2;
   }
-  if (char === '*') {
-    return num1 * num2;
-  }
+  return num1 * num2;
 };
 
 const chars = ['+', '-', '*'];
 
-const getRandomChar = () => {
-  return chars[Math.floor(Math.random() * chars.length)];
-};
+const getRandomChar = () => chars[Math.floor(Math.random() * chars.length)];
 
 const startRoundCalc = () => {
   const randomNumber1 = getRandomNumber(100);
@@ -34,10 +30,8 @@ const startRoundCalc = () => {
     console.log('Correct!');
     return true;
   }
-  if (Number(answer) !== correctAnswer) {
-    console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false;
-  }
+  console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  return false;
 };
 
 export default startRoundCalc;

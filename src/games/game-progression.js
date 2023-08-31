@@ -1,9 +1,7 @@
 import readLineSync from 'readline-sync';
 import getRandomNumber from '../index.js';
 
-const getProgressionStep = () => {
-  return Math.ceil(Math.random() * 6);
-};
+const getProgressionStep = () => Math.ceil(Math.random() * 6);
 
 const progressionStep = getProgressionStep();
 
@@ -20,9 +18,7 @@ const getProgression = (base, diff, count) => {
   return result;
 };
 
-const getHideIndex = () => {
-  return Math.floor(Math.random() * 10);
-};
+const getHideIndex = () => Math.floor(Math.random() * 10);
 
 const hideIndex = getHideIndex();
 
@@ -45,10 +41,8 @@ const startRoundProgression = () => {
     console.log('Correct!');
     return true;
   }
-  if (Number(answer) !== correctAnswer) {
-    console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false;
-  }
+  console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  return false;
 };
 
 export default startRoundProgression;

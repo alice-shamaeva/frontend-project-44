@@ -2,14 +2,16 @@ import readLineSync from 'readline-sync';
 import getRandomNumber from '../index.js';
 
 const getNOD = (num1, num2) => {
-  while (num1 !== num2) {
-    if (num1 > num2) {
-      num1 -= num2;
+  let n1 = num1;
+  let n2 = num2;
+  while (n1 !== n2) {
+    if (n1 > n2) {
+      n1 -= n2;
     } else {
-      num2 -= num1;
+      n2 -= n1;
     }
   }
-  return num1;
+  return n1;
 };
 
 const startRoundGCD = () => {
@@ -26,10 +28,8 @@ const startRoundGCD = () => {
     console.log('Correct!');
     return true;
   }
-  if (Number(answer) !== correctAnswer) {
-    console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false;
-  }
+  console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  return false;
 };
 
 export default startRoundGCD;

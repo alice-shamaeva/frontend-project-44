@@ -1,9 +1,7 @@
 import readLineSync from 'readline-sync';
 import getRandomNumber from '../index.js';
 
-const isEven = (num) => {
-  return num % 2 === 0;
-};
+const isEven = (num) => num % 2 === 0;
 
 const startRoundEven = () => {
   const randomNumber = getRandomNumber(100);
@@ -18,10 +16,8 @@ const startRoundEven = () => {
     console.log('Correct!');
     return true;
   }
-  if (answer.toLowerCase() !== correctAnswer) {
-    console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false;
-  }
+  console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  return false;
 };
 
 export default startRoundEven;

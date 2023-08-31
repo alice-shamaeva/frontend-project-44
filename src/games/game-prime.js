@@ -25,10 +25,8 @@ const startRoundPrime = () => {
     console.log('Correct!');
     return true;
   }
-  if (answer.toLowerCase() !== correctAnswer) {
-    console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false;
-  }
+  console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  return false;
 };
 
 export default startRoundPrime;
