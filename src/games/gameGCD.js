@@ -1,5 +1,5 @@
 import readLineSync from 'readline-sync';
-import getRandomNumber from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const getNOD = (num1, num2) => {
   let n1 = num1;
@@ -15,8 +15,8 @@ const getNOD = (num1, num2) => {
 };
 
 const startRoundGCD = () => {
-  const randomNumber1 = getRandomNumber(100);
-  const randomNumber2 = getRandomNumber(100);
+  const randomNumber1 = getRandomNumber(0, 101);
+  const randomNumber2 = getRandomNumber(0, 101);
 
   console.log(`Question: ${randomNumber1} ${randomNumber2}`);
 

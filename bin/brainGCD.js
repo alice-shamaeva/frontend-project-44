@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readLineSync from 'readline-sync';
-import startRoundGCD from '../src/games/game-gcd.js';
+import startRoundGCD from '../src/games/gameGCD.js';
 
 console.log('brain-gcd\n');
 

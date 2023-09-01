@@ -1,5 +1,5 @@
 import readLineSync from 'readline-sync';
-import getRandomNumber from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const isPrime = (num) => {
   if (num === 1) return false;
@@ -15,7 +15,7 @@ const isPrime = (num) => {
 };
 
 const startRoundPrime = () => {
-  const num = getRandomNumber(7) + 2;
+  const num = getRandomNumber(0, 7) + 2;
 
   const correctAnswer = isPrime(num) ? 'yes' : 'no';
 

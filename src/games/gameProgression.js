@@ -1,5 +1,5 @@
 import readLineSync from 'readline-sync';
-import getRandomNumber from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const getProgressionStep = () => Math.ceil(Math.random() * 6);
 
@@ -18,9 +18,7 @@ const getProgression = (base, diff, count) => {
   return result;
 };
 
-const getHideIndex = () => Math.floor(Math.random() * 10);
-
-const hideIndex = getHideIndex();
+const hideIndex = getRandomNumber(0, 10);
 
 const hideProgressionNumber = (progression, index) => {
   const p = [...progression];
@@ -29,7 +27,7 @@ const hideProgressionNumber = (progression, index) => {
 };
 
 const startRoundProgression = () => {
-  const progression = getProgression(getRandomNumber(100), progressionStep, 10);
+  const progression = getProgression(getRandomNumber(0, 101), progressionStep, 10);
 
   console.log(`Question: ${hideProgressionNumber(progression, hideIndex).join(' ')}`);
 
