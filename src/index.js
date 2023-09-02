@@ -1,7 +1,21 @@
 import readlineSync from 'readline-sync';
 
 const rules = (rule, getQuestionAndAnswer) => {
-  console.log('brain-calc\n');
+  if (rule === 'Answer "yes" if the number is even, otherwise answer "no".') {
+    console.log('brain-even\n');
+  }
+  if (rule === 'What is the result of the expression?') {
+    console.log('brain-calc\n');
+  }
+  if (rule === 'Find the greatest common divisor of given numbers.') {
+    console.log('brain-gcd\n');
+  }
+  if (rule === 'What number is missing in the progression?') {
+    console.log('brain-progression\n');
+  }
+  if (rule === 'Answer "yes" if given number is prime. Otherwise answer "no".') {
+    console.log('brain-prime\n');
+  }
 
   console.log('Welcome to the Brain Games!');
 

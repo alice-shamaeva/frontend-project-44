@@ -1,5 +1,7 @@
-import readLineSync from 'readline-sync';
+import rules from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
+
+const rule = 'What number is missing in the progression?';
 
 const getProgressionStep = () => Math.ceil(Math.random() * 6);
 
@@ -26,21 +28,15 @@ const hideProgressionNumber = (progression, index) => {
   return p;
 };
 
-const startRoundProgression = () => {
+const startProgression = () => {
   const progression = getProgression(getRandomNumber(0, 101), progressionStep, 10);
+  const question = `${hideProgressionNumber(progression, hideIndex).join(' ')}`;
+  const answer = progression[hideIndex];
+  return [question, String(answer)];
+};
 
-  console.log(`Question: ${hideProgressionNumber(progression, hideIndex).join(' ')}`);
-
-  const answer = readLineSync.question('Your answer: ');
-
-  const correctAnswer = progression[hideIndex];
-
-  if (Number(answer) === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return false;
+const startRoundProgression = () => {
+  rules(rule, startProgression);
 };
 
 export default startRoundProgression;

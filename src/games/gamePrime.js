@@ -1,5 +1,7 @@
-import readLineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
+import rules from '../index.js';
+
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num === 1) return false;
@@ -14,19 +16,17 @@ const isPrime = (num) => {
   return true;
 };
 
-const startRoundPrime = () => {
+const startPrime = () => {
   const num = getRandomNumber(0, 7) + 2;
 
-  const correctAnswer = isPrime(num) ? 'yes' : 'no';
+  const answer = isPrime(num) ? 'yes' : 'no';
 
-  console.log(`Question: ${num}`);
-  const answer = readLineSync.question('Your answer: ');
-  if (answer.toLowerCase() === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return false;
+  const question = `${num}`;
+  return [question, String(answer)];
+};
+
+const startRoundPrime = () => {
+  rules(rule, startPrime);
 };
 
 export default startRoundPrime;

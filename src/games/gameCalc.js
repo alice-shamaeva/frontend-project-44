@@ -1,6 +1,7 @@
-import readLineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
+import rules from '../index.js';
 
+const rule = 'What is the result of the expression?';
 const getExpression = (num1, num2, char) => {
   if (char === '+') {
     return num1 + num2;
@@ -15,23 +16,20 @@ const chars = ['+', '-', '*'];
 
 const getRandomChar = () => chars[getRandomNumber(0, 3)];
 
-const startRoundCalc = () => {
+const startCalc = () => {
   const randomNumber1 = getRandomNumber(0, 101);
   const randomNumber2 = getRandomNumber(0, 101);
   const randomChar = getRandomChar();
 
-  console.log(`Question: ${randomNumber1} ${randomChar} ${randomNumber2}`);
+  const question = `${randomNumber1} ${randomChar} ${randomNumber2}`;
 
-  const answer = readLineSync.question('Your answer: ');
+  const answer = getExpression(randomNumber1, randomNumber2, randomChar);
 
-  const correctAnswer = getExpression(randomNumber1, randomNumber2, randomChar);
+  return [question, String(answer)];
+};
 
-  if (Number(answer) === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer.toLowerCase()}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return false;
+const startRoundCalc = () => {
+  rules(rule, startCalc);
 };
 
 export default startRoundCalc;
