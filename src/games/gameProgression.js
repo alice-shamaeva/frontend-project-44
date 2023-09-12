@@ -3,35 +3,22 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const rule = 'What number is missing in the progression?';
 
-const getProgressionStep = () => Math.ceil(Math.random() * 6);
-
-const progressionStep = getProgressionStep();
-
-const getProgression = (base, diff, count) => {
+const startProgression = () => {
+  const firstNum = getRandomNumber(0, 101);
+  const diffProgression = getRandomNumber(1, 10);
+  const hideIndex = getRandomNumber(0, 10);
   const result = [];
-  let value = base;
+  let value = firstNum;
   let i = 1;
 
-  while (i <= count) {
+  while (i <= 10) {
     result.push(value);
-    value += diff;
+    value += diffProgression;
     i += 1;
   }
-  return result;
-};
-
-const hideIndex = getRandomNumber(0, 10);
-
-const hideProgressionNumber = (progression, index) => {
-  const p = [...progression];
-  p[index] = '..';
-  return p;
-};
-
-const startProgression = () => {
-  const progression = getProgression(getRandomNumber(0, 101), progressionStep, 10);
-  const question = `${hideProgressionNumber(progression, hideIndex).join(' ')}`;
-  const answer = progression[hideIndex];
+  const answer = result[hideIndex];
+  result[hideIndex] = '..';
+  const question = result.join(' ');
   return [question, String(answer)];
 };
 

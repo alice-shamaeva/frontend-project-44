@@ -3,14 +3,20 @@ import rules from '../index.js';
 
 const rule = 'What is the result of the expression?';
 const getExpression = (num1, num2, char) => {
+  let answer;
   switch (char) {
     case '+':
-      return num1 + num2;
-    case ('-'):
-      return num1 - num2;
-    default:
-      return num1 * num2;
+      answer = num1 + num2;
+      break;
+    case '-':
+      answer = num1 - num2;
+      break;
+    case '*':
+      answer = num1 * num2;
+      break;
+    default: break;
   }
+  return answer;
 };
 
 const chars = ['+', '-', '*'];
