@@ -21,7 +21,7 @@ const getExpression = (num1, num2, char) => {
 
 const chars = ['+', '-', '*'];
 
-const getRandomChar = () => chars[getRandomNumber(0, 3)];
+const getRandomChar = () => chars[getRandomNumber(0, 2)];
 
 const startCalc = () => {
   const randomNumber1 = getRandomNumber(0, 101);
