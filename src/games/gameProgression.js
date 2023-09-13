@@ -5,8 +5,8 @@ const rule = 'What number is missing in the progression?';
 
 const startProgression = () => {
   const firstNum = getRandomNumber(0, 101);
-  const diffProgression = getRandomNumber(1, 10);
-  const hideIndex = getRandomNumber(0, 10);
+  const diffProgression = getRandomNumber(1, 9);
+  const hideIndex = getRandomNumber(0, 9);
   const result = [];
   let value = firstNum;
   let i = 1;
