@@ -18,9 +18,9 @@ const getNOD = (num1, num2) => {
 const startGCD = () => {
   const randomNumber1 = getRandomNumber(0, 101);
   const randomNumber2 = getRandomNumber(0, 101);
-  const question = `${randomNumber1} ${randomNumber2}`;
+  const question = `${Number(randomNumber1)} ${Number(randomNumber2)}`;
   const answer = getNOD(randomNumber1, randomNumber2);
-  return [Number(question), String(answer)];
+  return [(question), String(answer)];
 };
 
 const startRoundGCD = () => {
