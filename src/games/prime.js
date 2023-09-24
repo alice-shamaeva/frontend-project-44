@@ -15,17 +15,16 @@ const isPrime = (num) => {
   return true;
 };
 
-const startPrime = () => {
-  const num = getRandomNumber(0, 7) + 2;
+const generateRound = () => {
+  const num = getRandomNumber(0, 7);
 
   const answer = isPrime(num) ? 'yes' : 'no';
 
-  const question = `${num}`;
-  return [question, String(answer)];
+  return [num, String(answer)];
 };
 
 const startRoundPrime = () => {
-  rules(rule, startPrime);
+  rules(rule, generateRound);
 };
 
 export default startRoundPrime;

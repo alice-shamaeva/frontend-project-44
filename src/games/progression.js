@@ -3,10 +3,9 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const rule = 'What number is missing in the progression?';
 
-const startProgression = () => {
+const getProgression = () => {
   const firstNum = getRandomNumber(0, 101);
   const diffProgression = getRandomNumber(1, 9);
-  const hideIndex = getRandomNumber(0, 9);
   const result = [];
   let value = firstNum;
   let i = 1;
@@ -16,14 +15,20 @@ const startProgression = () => {
     value += diffProgression;
     i += 1;
   }
-  const answer = result[hideIndex];
-  result[hideIndex] = '..';
-  const question = result.join(' ');
+  return result;
+};
+
+const generateRound = () => {
+  const hideIndex = getRandomNumber(0, 9);
+  const progression = getProgression();
+  const answer = progression[hideIndex];
+  progression[hideIndex] = '..';
+  const question = progression.join(' ');
   return [question, String(answer)];
 };
 
 const startRoundProgression = () => {
-  rules(rule, startProgression);
+  rules(rule, generateRound);
 };
 
 export default startRoundProgression;

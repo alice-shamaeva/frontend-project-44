@@ -2,7 +2,7 @@ import getRandomNumber from '../getRandomNumber.js';
 import rules from '../index.js';
 
 const rule = 'What is the result of the expression?';
-const getExpression = (num1, num2, char) => {
+const calculate = (num1, num2, char) => {
   let answer;
   switch (char) {
     case '+':
@@ -14,29 +14,27 @@ const getExpression = (num1, num2, char) => {
     case '*':
       answer = num1 * num2;
       break;
-    default: break;
+    default:
+      answer = undefined;
   }
   return answer;
 };
 
 const chars = ['+', '-', '*'];
 
-const getRandomChar = () => chars[getRandomNumber(0, 2)];
-
-const startCalc = () => {
+const generateRound = () => {
   const randomNumber1 = getRandomNumber(0, 101);
   const randomNumber2 = getRandomNumber(0, 101);
-  const randomChar = getRandomChar();
+  const randomChar = chars[getRandomNumber(0, 2)];
 
   const question = `${randomNumber1} ${randomChar} ${randomNumber2}`;
 
-  const answer = getExpression(randomNumber1, randomNumber2, randomChar);
-
+  const answer = calculate(randomNumber1, randomNumber2, randomChar);
   return [question, String(answer)];
 };
 
 const startRoundCalc = () => {
-  rules(rule, startCalc);
+  rules(rule, generateRound);
 };
 
 export default startRoundCalc;

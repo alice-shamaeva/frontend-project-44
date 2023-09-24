@@ -15,7 +15,7 @@ const getNOD = (num1, num2) => {
   return n1;
 };
 
-const startGCD = () => {
+const generateRound = () => {
   const randomNumber1 = getRandomNumber(0, 101);
   const randomNumber2 = getRandomNumber(0, 101);
   const question = `${String(randomNumber1)} ${String(randomNumber2)}`;
@@ -24,7 +24,7 @@ const startGCD = () => {
 };
 
 const startRoundGCD = () => {
-  rules(rule, startGCD);
+  rules(rule, generateRound);
 };
 
 export default startRoundGCD;
