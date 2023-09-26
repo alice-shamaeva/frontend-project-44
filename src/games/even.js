@@ -1,4 +1,4 @@
-import rules from '../index.js';
+import startGame from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -11,7 +11,7 @@ const generateRound = () => {
 };
 
 const startRoundEven = () => {
-  rules(rule, generateRound);
+  startGame(rule, generateRound);
 };
 
 export default startRoundEven;
