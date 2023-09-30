@@ -27,7 +27,7 @@ const generateRound = () => {
   const question = `${number1} ${char} ${number2}`;
 
   const answer = calculate(number1, number2, char);
-  return [Number(question), String(answer)];
+  return [question, String(answer)];
 };
 
 const startRoundCalc = () => {
