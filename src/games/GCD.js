@@ -20,7 +20,7 @@ const generateRound = () => {
   const randomNumber2 = getRandomNumber(0, 101);
   const question = [String(randomNumber1), String(randomNumber2)].join(' ');
   const answer = getNOD(randomNumber1, randomNumber2);
-  return [question, String(answer)];
+  return [String(question), String(answer)];
 };
 
 const startRoundGCD = () => {
