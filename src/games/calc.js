@@ -24,10 +24,10 @@ const generateRound = () => {
   const number2 = getRandomNumber(0, 101);
   const char = operators[getRandomNumber(0, maxOperatorsIndexCount)];
 
-  const question = [String(number1), String(char), String(number2)].join(' ');
+  const question = `${number1} ${char} ${number2}`;
 
   const answer = calculate(number1, number2, char);
-  return [question, String(answer)];
+  return [Number(question), String(answer)];
 };
 
 const startRoundCalc = () => {
