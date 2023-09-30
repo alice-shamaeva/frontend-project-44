@@ -11,7 +11,6 @@ const calculate = (number1, number2, operator) => {
     case '*':
       return number1 * number2;
     default:
-      console.log(operator);
       throw new Error(`Unknown operator!`);
   }
 };
@@ -19,7 +18,7 @@ const calculate = (number1, number2, operator) => {
 const operators = ['+', '-', '*'];
 
 const generateRound = () => {
-  const maxOperatorsIndexCount = operators.length;
+  const maxOperatorsIndexCount = operators.length - 1;
   const number1 = getRandomNumber(0, 101);
   const number2 = getRandomNumber(0, 101);
   const char = operators[getRandomNumber(0, maxOperatorsIndexCount)];
