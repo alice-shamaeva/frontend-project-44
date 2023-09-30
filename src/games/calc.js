@@ -18,7 +18,7 @@ const calculate = (number1, number2, operator) => {
 const operators = ['+', '-', '*'];
 
 const generateRound = () => {
-  const maxOperatorsIndexCount = 2;
+  const maxOperatorsIndexCount = operators.length;
   const number1 = getRandomNumber(0, 101);
   const number2 = getRandomNumber(0, 101);
   const char = operators[getRandomNumber(0, maxOperatorsIndexCount)];

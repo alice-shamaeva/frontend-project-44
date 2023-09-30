@@ -7,7 +7,7 @@ const isEven = (num) => num % 2 === 0;
 const generateRound = () => {
   const randomNumber = getRandomNumber(0, 101);
   const answer = isEven(randomNumber) ? 'yes' : 'no';
-  return [randomNumber, String(answer)];
+  return [randomNumber, answer];
 };
 
 const startRoundEven = () => {
