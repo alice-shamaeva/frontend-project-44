@@ -11,21 +11,20 @@ const calculate = (number1, number2, operator) => {
     case '*':
       return number1 * number2;
     default:
-      throw new Error('Unknown operator!');
+      throw new Error(`Unknown operator: ${operator}!`);
   }
 };
 
 const operators = ['+', '-', '*'];
 
 const generateRound = () => {
-  const maxOperatorsIndexCount = operators.length - 1;
   const number1 = getRandomNumber(0, 101);
   const number2 = getRandomNumber(0, 101);
-  const char = operators[getRandomNumber(0, maxOperatorsIndexCount)];
+  const operator = operators[getRandomNumber(0, operators.length - 1)];
 
-  const question = `${number1} ${char} ${number2}`;
+  const question = `${number1} ${operator} ${number2}`;
 
-  const answer = calculate(number1, number2, char);
+  const answer = calculate(number1, number2, operator);
   return [question, String(answer)];
 };
 

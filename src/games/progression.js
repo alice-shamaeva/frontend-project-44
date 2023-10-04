@@ -16,10 +16,10 @@ const getProgression = (firstNum, difference, length) => {
   return result;
 };
 
-const generateRound = (progressionLength = 10) => {
+const generateRound = () => {
   const firstNumber = getRandomNumber(0, 101);
   const step = getRandomNumber(1, 9);
-  const progression = getProgression(firstNumber, step, progressionLength);
+  const progression = getProgression(firstNumber, step, 10);
   const hideIndex = getRandomNumber(0, progression.length - 1);
   const answer = progression[hideIndex];
   progression[hideIndex] = '..';
