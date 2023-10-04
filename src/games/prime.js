@@ -17,11 +17,11 @@ const isPrime = (num) => {
 };
 
 const generateRound = () => {
-  const num = getRandomNumber(0, 7);
+  const number = getRandomNumber(0, 7);
 
-  const answer = isPrime(num) ? 'yes' : 'no';
+  const answer = isPrime(number) ? 'yes' : 'no';
 
-  return [num, String(answer)];
+  return [number, String(answer)];
 };
 
 const startRoundPrime = () => {
